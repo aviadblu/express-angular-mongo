@@ -32,7 +32,9 @@ module.exports = function(app) {
 			Contact.find(function(err, contacts) {
 				if (err)
 					res.send(err);
-				res.json(contacts);
+
+				var congrats = "Congrats "+req.body.form_data.name+"! ";
+				res.send({status:congrats + " Your form has been sent!"});
 			});
 		});
 		
